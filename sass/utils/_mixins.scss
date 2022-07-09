@@ -1,0 +1,9 @@
+@use "variables" as v;
+@use "functions" as f;
+
+@mixin flex($content: center, $direction: row) {
+  display: flex;
+  justify-content: ($content);
+  align-items: center;
+  flex-direction: ($direction);
+}

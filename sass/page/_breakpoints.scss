@@ -1,0 +1,42 @@
+@use "../utils/mixins" as m;
+@use "../utils/functions" as f;
+@use "../utils/variables" as v;
+
+$breakpoints: (
+  "ms": 320px,
+  "mm": 375px,
+  "ml": 425px,
+  "md": 768px,
+  "xl": 1024px,
+);
+
+@mixin md {
+  @media screen and (max-width: map-get($breakpoints, "md")) {
+    @content;
+  }
+}
+@mixin ml {
+  @media screen and (max-width: map-get($breakpoints, "ml")) {
+    @content;
+  }
+}
+@mixin mm {
+  @media screen and (max-width: map-get($breakpoints, "mm")) {
+    @content;
+  }
+}
+@mixin ms {
+  @media screen and (max-width: map-get($breakpoints, "ms")) {
+    @content;
+  }
+}
+@mixin xl {
+  @media screen and (max-width: map-get($breakpoints, "xl")) {
+    @content;
+  }
+}
+@mixin breakpoints($bp: 0) {
+  @media screen and (max-width: $bp) {
+    @content;
+  }
+}
