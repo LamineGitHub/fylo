@@ -1,41 +1,152 @@
 @use "../utils/mixins" as m;
 @use "../utils/functions" as f;
 @use "../utils/variables" as v;
+@use "../page/breakpoints" as b;
 
 //   background-color: v.$main-color;
+
+::-webkit-scrollbar {
+  cursor: pointer;
+  width: 10px;
+  &-track {
+    background-color: v.$p-color;
+    border-radius: 5px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  &-thumb {
+    border-radius: 5px;
+    background: linear-gradient(
+      0deg,
+      v.$accent-color 30%,
+      darken(v.$accent-secondary-color, 50%) 100%
+    );
+    &:hover {
+      background: linear-gradient(
+        0deg,
+        darken(v.$accent-color, 10%) 20%,
+        darken(v.$accent-secondary-color, 50%) 100%
+      );
+    }
+    &:active {
+      background: linear-gradient(
+        0deg,
+        darken(v.$accent-secondary-color, 50%) 50%,
+        v.$accent-color 100%
+      );
+    }
+  }
+}
 
 .section1 {
   position: relative;
   @include m.flex($direction: column);
-    text-align: center;
+  text-align: center;
   &__img {
     > img {
       width: 75%;
-      margin-bottom: f.rem(30);
+      margin-bottom: f.rem(40);
+      @include b.ml {
+        margin-top: f.rem(30);
+      }
     }
   }
-  
+
   &__text {
-    width: 50%;
-    color: #fbffff;
-    
+    width: 80%;
+    color: v.$title-color;
+
     h1 {
-      margin-bottom: f.rem(30);
+      width: 65%;
+      margin: 0 auto;
+      margin-bottom: f.rem(35);
+      @include b.breakpoints(600px) {
+        width: 100%;
+        
+      }
     }
     
     p {
-      width: 75%;
+      width: 50%;
       margin: 0 auto;
       color: v.$p-color;
-      margin-bottom: f.rem(30);
-      // border: 1px solid red;
+      margin-bottom: f.rem(35);
+      @include b.md {
+        width: 80%;
+      }
+      @include b.ml {
+        width: 100%;
+      }
     }
-  }  
+  }
 
   .wave {
     position: absolute;
     z-index: -9999;
     bottom: f.rem(-200);
-  }  
-  
+    @include b.xl {
+      bottom: f.rem(-120);
+    }
+    @include b.md {
+      bottom: f.rem(-50);
+    }
+    @include b.ms {
+      bottom: f.rem(-20);
+    }
+  }
+}
+
+.section2 {
+  background-color: v.$main-color;
+  margin-top: f.rem(170);
+  color: v.$title-color;
+  text-align: center;
+  @include b.xl {
+    margin-top: f.rem(115);
+  }
+  @include b.md {
+    margin-top: f.rem(30);
+  }
+  @include b.ml {
+    margin-top: f.rem(40);
+  }
+  @include b.ms {
+    margin-top: f.rem(-10);
+  }
+
+  .lines {
+    @include m.flex(space-between);
+    width: 90%;
+    margin: 0 auto;
+    // border: 1px solid red;
+    @include b.md {
+      @include m.flex($direction: column);
+      width: 100%;
+    }
+
+    h2 {
+      margin: f.rem(25) 0 f.rem(15) 0;
+    }
+
+    p {
+      width: 80%;
+      margin: 0 auto;
+      margin-bottom: f.rem(30);
+      @include b.md {
+        width: 100%;
+        margin-bottom: f.rem(50);
+        // border: 1px solid red;
+      }
+    }
+  }
+
+  .line1 {
+    @include b.ml {
+      margin-top: f.rem(20);
+    }
+
+    @include b.md {
+      @include m.flex($direction: column);
+      padding-top: f.rem(100);
+    }
+  }
 }

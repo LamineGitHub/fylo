@@ -12,6 +12,7 @@
   position: relative;
   z-index: 1;
   cursor: pointer;
+  letter-spacing: f.rem(2);
 
   &::before {
     content: "";

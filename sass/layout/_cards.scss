@@ -1,0 +1,13 @@
+@use "../utils/mixins" as m;
+@use "../utils/functions" as f;
+@use "../utils/variables" as v;
+@use "../page/breakpoints" as b;
+
+
+.cards {
+  width: 60%;
+  margin-bottom: f.rem(40);
+  @include b.breakpoints(700px) {
+      width: 90%;
+  }
+}

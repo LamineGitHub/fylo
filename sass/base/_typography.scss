@@ -20,3 +20,17 @@
     font-family: v.$font;
   }
 }
+
+.section2 {
+  h2 {
+    font-family: v.$font;
+    @extend %size-text-h2;
+  }
+
+  p {
+    @extend %size-text-p;
+    line-height: f.rem(25);
+    font-family: v.$font;
+    color: v.$p-color;
+  }
+}

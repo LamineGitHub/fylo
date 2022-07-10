@@ -12,9 +12,30 @@
 
 %size-text-h1 {
   font-size: f.rem(30);
+  @include b.ml {
+    font-size: f.rem(26);
+  }
+  @include b.mm {
+    font-size: f.rem(24);
+  }
+}
+
+%size-text-h2 {
+  font-size: f.rem(26);
+  @include b.ml {
+    font-size: f.rem(22);
+  }
+  @include b.mm {
+    font-size: f.rem(20);
+  }
 }
 
 %size-text-p {
-  font-size: f.rem(17);
+  font-size: f.rem(18);
+  @include b.ml {
+    font-size: f.rem(16);
+  }
+  // @include b.mm {
+  //   font-size: f.rem(14);
+  // }
 }
-
