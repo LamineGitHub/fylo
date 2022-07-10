@@ -4,6 +4,19 @@
 @use "../utils/placeholders";
 
 .header {
-  @extend %size-text-h1;
-  font-family: "open sans", sans-serif;
+  @extend %size-text;
+  font-family: v.$font;
+}
+
+.section1 {
+  h1 {
+    font-family: v.$font;
+    @extend %size-text-h1;
+  }
+
+  p {
+    @extend %size-text-p;
+    line-height: f.rem(25);
+    font-family: v.$font;
+  }
 }

@@ -1,0 +1,40 @@
+@use "../utils/mixins" as m;
+@use "../utils/functions" as f;
+@use "../utils/variables" as v;
+@use "../page/breakpoints" as b;
+
+.btn {
+  font-family: v.$font;
+  width: f.rem(250);
+  background-color: v.$accent-color;
+  padding: f.rem(15);
+  border-radius: f.rem(30);
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    border-radius: f.rem(30);
+    background-color: v.$accent-secondary-color;
+    opacity: 0;
+    transition: opacity v.$transition;
+  }
+
+  &:hover {
+    &::before{
+        opacity: 1;
+    }
+  }
+
+  a {
+    color: white;
+    z-index: 2;
+  }
+}

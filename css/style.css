@@ -16,8 +16,29 @@ body {
 .header {
   font-size: 1.0625rem;
 }
+@media screen and (max-width: 425px) {
+  .header {
+    font-size: 0.8125rem;
+  }
+}
+
+.section1 h1 {
+  font-size: 1.875rem;
+}
+
+.section1 p {
+  font-size: 1.0625rem;
+}
 
 .header {
+  font-family: "open sans", sans-serif;
+}
+
+.section1 h1 {
+  font-family: "open sans", sans-serif;
+}
+.section1 p {
+  line-height: 1.5625rem;
   font-family: "open sans", sans-serif;
 }
 
@@ -31,7 +52,6 @@ body {
     align-items: center;
     flex-direction: row;
     margin: 0.9375rem 0 0 0;
-    font-size: 0.8125rem;
   }
 }
 .header__links a {
@@ -96,16 +116,66 @@ body {
   }
 }
 
+.btn {
+  font-family: "open sans", sans-serif;
+  width: 15.625rem;
+  background-color: #339ecc;
+  padding: 0.9375rem;
+  border-radius: 1.875rem;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+}
+.btn::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+  border-radius: 1.875rem;
+  background-color: #65e2d9;
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+}
+.btn:hover::before {
+  opacity: 1;
+}
+.btn a {
+  color: white;
+  z-index: 2;
+}
+
 .section1 {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   text-align: center;
 }
-.section1 .img-intro > img {
-  width: 90%;
-  margin-bottom: 1.5625rem;
+.section1__img > img {
+  width: 75%;
+  margin-bottom: 1.875rem;
+}
+.section1__text {
+  width: 50%;
+  color: #fbffff;
+}
+.section1__text h1 {
+  margin-bottom: 1.875rem;
+}
+.section1__text p {
+  width: 75%;
+  margin: 0 auto;
+  color: #e3e6ee;
+  margin-bottom: 1.875rem;
+}
+.section1 .wave {
+  position: absolute;
+  z-index: -9999;
+  bottom: -12.5rem;
 }
 
 /*# sourceMappingURL=style.css.map */

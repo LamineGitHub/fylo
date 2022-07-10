@@ -1,0 +1,41 @@
+@use "../utils/mixins" as m;
+@use "../utils/functions" as f;
+@use "../utils/variables" as v;
+
+//   background-color: v.$main-color;
+
+.section1 {
+  position: relative;
+  @include m.flex($direction: column);
+    text-align: center;
+  &__img {
+    > img {
+      width: 75%;
+      margin-bottom: f.rem(30);
+    }
+  }
+  
+  &__text {
+    width: 50%;
+    color: #fbffff;
+    
+    h1 {
+      margin-bottom: f.rem(30);
+    }
+    
+    p {
+      width: 75%;
+      margin: 0 auto;
+      color: v.$p-color;
+      margin-bottom: f.rem(30);
+      // border: 1px solid red;
+    }
+  }  
+
+  .wave {
+    position: absolute;
+    z-index: -9999;
+    bottom: f.rem(-200);
+  }  
+  
+}
