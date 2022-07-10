@@ -13,6 +13,7 @@
     a {
       margin-right: f.rem(60);
       color: white;
+      transition: color v.$transition;
       position: relative;
       @include b.breakpoints(600px) {
         margin-right: f.rem(20);
@@ -28,13 +29,16 @@
         display: block;
         height: 2px;
         width: 100%;
-        background-color: white;
+        background-color: v.$accent-secondary-color;
         transform: scale(0);
         transform-origin: left;
         transition: transform v.$transition;
       }
-      &:hover::after {
-        transform: scale(1);
+      &:hover {
+        color: v.$accent-secondary-color;
+        &::after {
+          transform: scale(1);
+        }
       }
     }
   }
