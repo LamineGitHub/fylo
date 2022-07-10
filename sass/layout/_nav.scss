@@ -1,0 +1,42 @@
+@use "../utils/mixins" as m;
+@use "../utils/functions" as f;
+@use "../utils/variables" as v;
+@use "../page/breakpoints" as b;
+
+.header {
+  &__links {
+    text-align: center;
+    @include b.ml {
+      @include m.flex(space-between);
+      margin: f.rem(15) 0 0 0;
+      font-size: f.rem(13);
+    }
+    a {
+      margin-right: f.rem(60);
+      color: white;
+      position: relative;
+      @include b.breakpoints(600px) {
+        margin-right: f.rem(20);
+      }
+      @include b.ml {
+        margin: 0 f.rem(15) 0 f.rem(15);
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: block;
+        height: 2px;
+        width: 100%;
+        background-color: white;
+        transform: scale(0);
+        transform-origin: left;
+        transition: transform v.$transition;
+      }
+      &:hover::after {
+        transform: scale(1);
+      }
+    }
+  }
+}

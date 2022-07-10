@@ -1,0 +1,14 @@
+@use "../utils/mixins" as m;
+@use "../utils/functions" as f;
+@use "../utils/variables" as v;
+
+%size-text-h1 {
+  font-size: f.rem(17);
+}
+%size-text-h2 {
+  font-size: f.rem(17);
+}
+%size-text-p {
+  font-size: f.rem(17);
+}
+

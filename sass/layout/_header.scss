@@ -1,0 +1,28 @@
+@use "../utils/mixins" as m;
+@use "../utils/functions" as f;
+@use "../utils/variables" as v;
+@use "../page/breakpoints" as b;
+
+@use "nav";
+
+.header {
+  text-align: center;
+  // border: 1px solid darkred;
+  @include m.flex(space-between);
+  width: 92%;
+  margin: f.rem(45) auto;
+  @include b.ml {
+    @include m.flex($direction: column);
+    margin: f.rem(25) auto;
+  }
+
+  img {
+    cursor: pointer;
+    width: 80%;
+    margin-left: 10%;
+    @include b.ml {
+      width: 60%;
+      margin-left: 0;
+    }
+  }
+}

@@ -13,4 +13,99 @@ body {
   background-color: #1c2230;
 }
 
+.header {
+  font-size: 1.0625rem;
+}
+
+.header {
+  font-family: "open sans", sans-serif;
+}
+
+.header__links {
+  text-align: center;
+}
+@media screen and (max-width: 425px) {
+  .header__links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    margin: 0.9375rem 0 0 0;
+    font-size: 0.8125rem;
+  }
+}
+.header__links a {
+  margin-right: 3.75rem;
+  color: white;
+  position: relative;
+}
+@media screen and (max-width: 600px) {
+  .header__links a {
+    margin-right: 1.25rem;
+  }
+}
+@media screen and (max-width: 425px) {
+  .header__links a {
+    margin: 0 0.9375rem 0 0.9375rem;
+  }
+}
+.header__links a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: white;
+  transform: scale(0);
+  transform-origin: left;
+  transition: transform 300ms ease-in-out;
+}
+.header__links a:hover::after {
+  transform: scale(1);
+}
+
+.header {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 92%;
+  margin: 2.8125rem auto;
+}
+@media screen and (max-width: 425px) {
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 1.5625rem auto;
+  }
+}
+.header img {
+  cursor: pointer;
+  width: 80%;
+  margin-left: 10%;
+}
+@media screen and (max-width: 425px) {
+  .header img {
+    width: 60%;
+    margin-left: 0;
+  }
+}
+
+.section1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+.section1 .img-intro > img {
+  width: 90%;
+  margin-bottom: 1.5625rem;
+}
+
 /*# sourceMappingURL=style.css.map */

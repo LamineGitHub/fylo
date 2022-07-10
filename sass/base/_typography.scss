@@ -1,0 +1,9 @@
+@use "../utils/mixins" as m;
+@use "../utils/functions" as f;
+@use "../utils/variables" as v;
+@use "../utils/placeholders";
+
+.header {
+  @extend %size-text-h1;
+  font-family: "open sans", sans-serif;
+}
