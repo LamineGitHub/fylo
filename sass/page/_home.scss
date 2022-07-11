@@ -41,6 +41,7 @@
   position: relative;
   @include m.flex($direction: column);
   text-align: center;
+
   &__img {
     > img {
       width: 75%;
@@ -119,19 +120,19 @@
       @include m.flex($direction: column);
       width: 100%;
     }
+  }
 
-    h2 {
-      margin: f.rem(25) 0 f.rem(15) 0;
-    }
+  h2 {
+    margin: f.rem(25) 0 f.rem(15) 0;
+  }
 
-    p {
-      width: 80%;
-      margin: 0 auto;
-      margin-bottom: f.rem(30);
-      @include b.md {
-        width: 100%;
-        margin-bottom: f.rem(50);
-      }
+  p {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: f.rem(30);
+    @include b.md {
+      width: 100%;
+      margin-bottom: f.rem(50);
     }
   }
 
@@ -149,7 +150,6 @@
 .section3 {
   background-color: v.$main-color;
   padding-top: f.rem(100);
-  margin-bottom: f.rem(60);
   @include m.flex;
   @include b.md {
     @include m.flex($direction: column);
@@ -173,10 +173,11 @@
       width: 90%;
       margin-left: f.rem(15);
     }
+
     h1 {
-      width: 68%;
+      width: 65%;
       margin-bottom: f.rem(30);
-      @include b.breakpoints(1040px){
+      @include b.breakpoints(1040px) {
         width: 100%;
       }
       @include b.md {
@@ -193,32 +194,93 @@
       }
     }
 
-    .lien {
-      a {
-        position: relative;
-        color: white;
-        transition: color v.$transition;
+    a {
+      position: relative;
+      color: white;
+      transition: color v.$transition;
 
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        display: block;
+        height: 2px;
+        width: 100%;
+        background-color: v.$accent-secondary-color;
+        transform: scale(1);
+        transform-origin: left;
+        transition: transform v.$transition;
+      }
+      &:hover {
+        color: v.$accent-secondary-color;
         &::after {
-          content: "";
-          position: absolute;
-          bottom: -3px;
-          left: 0;
-          display: block;
-          height: 2px;
-          width: 100%;
-          background-color: v.$accent-secondary-color;
-          transform: scale(1);
-          transform-origin: left;
-          transition: transform v.$transition;
-        }
-        &:hover {
-          color: v.$accent-secondary-color;
-          &::after {
-            transform: scale(0);
-          }
+          transform: scale(0);
         }
       }
+    }
+  }
+}
+
+.section4 {
+  background-color: v.$main-color;
+  padding-top: f.rem(180);
+
+  .container {
+    z-index: 1;
+    width: 85%;
+    margin: 0 auto;
+    @include m.flex(space-around);
+    @include b.md {
+      @include m.flex($direction: column);
+    }
+    position: relative;
+    > img {
+      position: absolute;
+      z-index: -1;
+      top: f.rem(-40);
+      left: 0;
+    }
+  }
+
+  .boxs {
+    cursor: pointer;
+    background-color: v.$box-color;
+    width: 31%;
+    transition: transform v.$transition;
+    border-radius: f.rem(10);
+    padding: f.rem(30) f.rem(30) f.rem(20);
+    @include b.md {
+      width: 95%;
+      margin-bottom: f.rem(30);
+    }
+
+    &:hover {
+      transform: translateY(-10px);
+    }
+
+    p {
+      margin-bottom: f.rem(20);
+    }
+  }
+
+  .profile {
+    display: flex;
+    align-items: center;
+
+    img {
+      width: f.rem(50);
+      margin-right: f.rem(10);
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    h3 {
+      margin-bottom: f.rem(3);
+    }
+
+    p {
+      margin: 0;
     }
   }
 }

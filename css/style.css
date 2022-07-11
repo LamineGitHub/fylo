@@ -13,86 +13,93 @@ body {
   background-color: #1c2230;
 }
 
-.header, .lien {
+.header,
+.lien {
   font-size: 1.0625rem;
 }
 @media screen and (max-width: 425px) {
-  .header, .lien {
-    font-size: 0.8125rem;
+  .header,
+.lien {
+    font-size: 0.875rem;
   }
 }
 
-.section1 h1,
-.section2 h1,
-.section3 h1 {
+h1 {
   font-size: 2.1875rem;
 }
 @media screen and (max-width: 425px) {
-  .section1 h1,
-.section2 h1,
-.section3 h1 {
+  h1 {
     font-size: 1.9375rem;
   }
 }
 @media screen and (max-width: 375px) {
-  .section1 h1,
-.section2 h1,
-.section3 h1 {
+  h1 {
     font-size: 1.5rem;
   }
 }
 
-.section1 h2,
-.section2 h2,
-.section3 h2 {
+h2 {
   font-size: 1.625rem;
 }
 @media screen and (max-width: 425px) {
-  .section1 h2,
-.section2 h2,
-.section3 h2 {
+  h2 {
     font-size: 1.375rem;
   }
 }
 @media screen and (max-width: 375px) {
-  .section1 h2,
-.section2 h2,
-.section3 h2 {
+  h2 {
     font-size: 1.25rem;
   }
 }
 
-.section1 p,
-.section2 p,
-.section3 p {
-  font-size: 1.125rem;
+h3 {
+  font-size: 1.1875rem;
 }
 @media screen and (max-width: 425px) {
-  .section1 p,
-.section2 p,
-.section3 p {
+  h3 {
     font-size: 1rem;
   }
 }
+@media screen and (max-width: 375px) {
+  h3 {
+    font-size: 0.9375rem;
+  }
+}
 
-.header, .lien {
+p {
+  font-size: 1.125rem;
+}
+@media screen and (max-width: 425px) {
+  p {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 375px) {
+  p {
+    font-size: 0.875rem;
+  }
+}
+
+.header,
+.lien {
   font-family: "open sans", sans-serif;
 }
 
-.section1 h1,
-.section2 h1,
-.section3 h1 {
+h1 {
   font-family: "open sans", sans-serif;
   color: #fbffff;
 }
-.section1 h2,
-.section2 h2,
-.section3 h2 {
+
+h2 {
   font-family: "open sans", sans-serif;
 }
-.section1 p,
-.section2 p,
-.section3 p {
+
+h3 {
+  color: #fbffff;
+  font-family: "open sans", sans-serif;
+}
+
+p {
   line-height: 1.5625rem;
   font-family: "open sans", sans-serif;
   color: #e3e6ee;
@@ -103,8 +110,12 @@ body {
     font-size: 1.25rem;
   }
 }
-@media screen and (max-width: 375px) {
-  .section3 p {
+
+.section4 p {
+  font-size: 1.0625rem;
+}
+@media screen and (max-width: 1024px) {
+  .section4 p {
     font-size: 0.9375rem;
   }
 }
@@ -359,16 +370,16 @@ body {
     width: 100%;
   }
 }
-.section2 .lines h2 {
+.section2 h2 {
   margin: 1.5625rem 0 0.9375rem 0;
 }
-.section2 .lines p {
+.section2 p {
   width: 80%;
   margin: 0 auto;
   margin-bottom: 1.875rem;
 }
 @media screen and (max-width: 768px) {
-  .section2 .lines p {
+  .section2 p {
     width: 100%;
     margin-bottom: 3.125rem;
   }
@@ -387,7 +398,6 @@ body {
 .section3 {
   background-color: #181F2B;
   padding-top: 6.25rem;
-  margin-bottom: 3.75rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -424,7 +434,7 @@ body {
   }
 }
 .section3__text h1 {
-  width: 68%;
+  width: 65%;
   margin-bottom: 1.875rem;
 }
 @media screen and (max-width: 1040px) {
@@ -447,12 +457,12 @@ body {
     width: 100%;
   }
 }
-.section3__text .lien a {
+.section3__text a {
   position: relative;
   color: white;
   transition: color 300ms ease-in-out;
 }
-.section3__text .lien a::after {
+.section3__text a::after {
   content: "";
   position: absolute;
   bottom: -3px;
@@ -465,11 +475,76 @@ body {
   transform-origin: left;
   transition: transform 300ms ease-in-out;
 }
-.section3__text .lien a:hover {
+.section3__text a:hover {
   color: #65e2d9;
 }
-.section3__text .lien a:hover::after {
+.section3__text a:hover::after {
   transform: scale(0);
+}
+
+.section4 {
+  background-color: #181F2B;
+  padding-top: 11.25rem;
+}
+.section4 .container {
+  z-index: 1;
+  width: 85%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  position: relative;
+}
+@media screen and (max-width: 768px) {
+  .section4 .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+.section4 .container > img {
+  position: absolute;
+  z-index: -1;
+  top: -2.5rem;
+  left: 0;
+}
+.section4 .boxs {
+  cursor: pointer;
+  background-color: #202a3c;
+  width: 31%;
+  transition: transform 300ms ease-in-out;
+  border-radius: 0.625rem;
+  padding: 1.875rem 1.875rem 1.25rem;
+}
+@media screen and (max-width: 768px) {
+  .section4 .boxs {
+    width: 95%;
+    margin-bottom: 1.875rem;
+  }
+}
+.section4 .boxs:hover {
+  transform: translateY(-10px);
+}
+.section4 .boxs p {
+  margin-bottom: 1.25rem;
+}
+.section4 .profile {
+  display: flex;
+  align-items: center;
+}
+.section4 .profile img {
+  width: 3.125rem;
+  margin-right: 0.625rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.section4 .profile h3 {
+  margin-bottom: 0.1875rem;
+}
+.section4 .profile p {
+  margin: 0;
 }
 
 /*# sourceMappingURL=style.css.map */

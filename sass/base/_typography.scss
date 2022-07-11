@@ -4,31 +4,34 @@
 @use "../page/breakpoints" as b;
 @use "../utils/placeholders";
 
-.header, .lien {
+.header,
+.lien {
   @extend %size-text;
   font-family: v.$font;
 }
 
-.section1,
-.section2,
-.section3 {
-  h1 {
-    font-family: v.$font;
-    @extend %size-text-h1;
-    color: v.$title-color;
-  }
+h1 {
+  font-family: v.$font;
+  @extend %size-text-h1;
+  color: v.$title-color;
+}
 
-  h2 {
-    font-family: v.$font;
-    @extend %size-text-h2;
-  }
+h2 {
+  font-family: v.$font;
+  @extend %size-text-h2;
+}
 
-  p {
-    @extend %size-text-p;
-    line-height: f.rem(25);
-    font-family: v.$font;
-    color: v.$p-color;
-  }
+h3 {
+  color: v.$title-color;
+  font-family: v.$font;
+  @extend %size-text-h3;
+}
+
+p {
+  @extend %size-text-p;
+  line-height: f.rem(25);
+  font-family: v.$font;
+  color: v.$p-color;
 }
 
 .section3 {
@@ -37,12 +40,13 @@
       font-size: f.rem(20);
     }
   }
+}
 
+.section4 {
   p {
-    @include b.mm {
+    font-size: f.rem(17);
+    @include b.xl {
       font-size: f.rem(15);
     }
   }
-
-
 }
