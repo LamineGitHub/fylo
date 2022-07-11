@@ -120,6 +120,11 @@ p {
   }
 }
 
+input {
+  font-size: 1.1875rem;
+  font-family: "open sans", sans-serif;
+}
+
 .header__links {
   text-align: center;
 }
@@ -216,6 +221,7 @@ p {
   border-radius: 1.875rem;
   position: relative;
   z-index: 1;
+  border: none;
   cursor: pointer;
   letter-spacing: 0.125rem;
 }
@@ -545,6 +551,73 @@ p {
 }
 .section4 .profile p {
   margin: 0;
+}
+
+.section5 {
+  background-color: #181F2B;
+  position: relative;
+  padding-top: 13.75rem;
+}
+@media screen and (max-width: 768px) {
+  .section5 {
+    padding-top: 9.375rem;
+  }
+}
+.section5 .container {
+  background-color: #1c2230;
+  width: 70%;
+  margin: 0 auto;
+  padding-bottom: 2.5rem;
+  text-align: center;
+  border-radius: 0.9375rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+@media screen and (max-width: 768px) {
+  .section5 .container {
+    width: 90%;
+  }
+}
+.section5 .text {
+  width: 90%;
+  margin: 0 auto 1.875rem;
+}
+.section5 h1 {
+  padding-top: 1.875rem;
+  margin-bottom: 1.25rem;
+}
+.section5 p {
+  width: 70%;
+  margin: 0 auto 3.125rem;
+}
+@media screen and (max-width: 768px) {
+  .section5 p {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .section5 .form {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+.section5 .form input {
+  width: 40%;
+  border-radius: 1.875rem;
+  padding: 0.6875rem 0.9375rem;
+  margin-right: 1.875rem;
+  outline: none;
+  border: none;
+}
+@media screen and (max-width: 768px) {
+  .section5 .form input {
+    width: 75%;
+    margin: 0 auto 1.25rem;
+  }
+}
+@media screen and (max-width: 425px) {
+  .section5 .form input {
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

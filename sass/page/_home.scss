@@ -284,3 +284,66 @@
     }
   }
 }
+
+.section5 {
+  background-color: v.$main-color;
+  position: relative;
+  padding-top: f.rem(220);
+  @include b.md {
+    padding-top: f.rem(150);
+  }
+
+  .container {
+    background-color: v.$secondary-color;
+    width: 70%;
+    margin: 0 auto;
+    padding-bottom: f.rem(40);
+    text-align: center;
+    border-radius: f.rem(15);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    @include b.md {
+      width: 90%;
+    }
+  }
+
+  .text {
+    width: 90%;
+    margin: 0 auto f.rem(30);
+  }
+
+  h1 {
+    padding-top: f.rem(30);
+    margin-bottom: f.rem(20);
+  }
+
+  p {
+    width: 70%;
+    margin: 0 auto f.rem(50);
+    @include b.md {
+      width: 100%;
+    }
+  }
+
+  .form {
+    @include b.md {
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    input {
+      width: 40%;
+      border-radius: f.rem(30);
+      padding: f.rem(11) f.rem(15);
+      margin-right: f.rem(30);
+      outline: none;
+      border: none;
+      @include b.md {
+        width: 75%;
+        margin: 0 auto f.rem(20);
+      }
+      @include b.ml {
+        width: 100%;
+      }
+    }
+  }
+}
