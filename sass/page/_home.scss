@@ -53,7 +53,6 @@
 
   &__text {
     width: 80%;
-    color: v.$title-color;
 
     h1 {
       width: 65%;
@@ -61,10 +60,9 @@
       margin-bottom: f.rem(35);
       @include b.breakpoints(600px) {
         width: 100%;
-        
       }
     }
-    
+
     p {
       width: 50%;
       margin: 0 auto;
@@ -117,7 +115,6 @@
     @include m.flex(space-between);
     width: 90%;
     margin: 0 auto;
-    // border: 1px solid red;
     @include b.md {
       @include m.flex($direction: column);
       width: 100%;
@@ -134,7 +131,6 @@
       @include b.md {
         width: 100%;
         margin-bottom: f.rem(50);
-        // border: 1px solid red;
       }
     }
   }
@@ -145,8 +141,84 @@
     }
 
     @include b.md {
-      @include m.flex($direction: column);
       padding-top: f.rem(100);
+    }
+  }
+}
+
+.section3 {
+  background-color: v.$main-color;
+  padding-top: f.rem(100);
+  margin-bottom: f.rem(60);
+  @include m.flex;
+  @include b.md {
+    @include m.flex($direction: column);
+  }
+
+  &__img {
+    text-align: center;
+    margin-left: f.rem(20);
+    > img {
+      width: 90%;
+      @include b.md {
+        width: 90%;
+        margin-top: f.rem(0);
+      }
+    }
+  }
+
+  &__text {
+    width: 50%;
+    @include b.md {
+      width: 90%;
+      margin-left: f.rem(15);
+    }
+    h1 {
+      width: 68%;
+      margin-bottom: f.rem(30);
+      @include b.breakpoints(1040px){
+        width: 100%;
+      }
+      @include b.md {
+        width: 100%;
+        margin: f.rem(30) 0;
+      }
+    }
+
+    p {
+      width: 90%;
+      margin: f.rem(20) 0;
+      @include b.md {
+        width: 100%;
+      }
+    }
+
+    .lien {
+      a {
+        position: relative;
+        color: white;
+        transition: color v.$transition;
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: -3px;
+          left: 0;
+          display: block;
+          height: 2px;
+          width: 100%;
+          background-color: v.$accent-secondary-color;
+          transform: scale(1);
+          transform-origin: left;
+          transition: transform v.$transition;
+        }
+        &:hover {
+          color: v.$accent-secondary-color;
+          &::after {
+            transform: scale(0);
+          }
+        }
+      }
     }
   }
 }

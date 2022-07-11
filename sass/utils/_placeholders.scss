@@ -11,9 +11,9 @@
 }
 
 %size-text-h1 {
-  font-size: f.rem(30);
+  font-size: f.rem(35);
   @include b.ml {
-    font-size: f.rem(26);
+    font-size: f.rem(31);
   }
   @include b.mm {
     font-size: f.rem(24);

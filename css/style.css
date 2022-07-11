@@ -13,71 +13,100 @@ body {
   background-color: #1c2230;
 }
 
-.header {
+.header, .lien {
   font-size: 1.0625rem;
 }
 @media screen and (max-width: 425px) {
-  .header {
+  .header, .lien {
     font-size: 0.8125rem;
   }
 }
 
-.section1 h1 {
-  font-size: 1.875rem;
+.section1 h1,
+.section2 h1,
+.section3 h1 {
+  font-size: 2.1875rem;
 }
 @media screen and (max-width: 425px) {
-  .section1 h1 {
-    font-size: 1.625rem;
+  .section1 h1,
+.section2 h1,
+.section3 h1 {
+    font-size: 1.9375rem;
   }
 }
 @media screen and (max-width: 375px) {
-  .section1 h1 {
+  .section1 h1,
+.section2 h1,
+.section3 h1 {
     font-size: 1.5rem;
   }
 }
 
-.section2 h2 {
+.section1 h2,
+.section2 h2,
+.section3 h2 {
   font-size: 1.625rem;
 }
 @media screen and (max-width: 425px) {
-  .section2 h2 {
+  .section1 h2,
+.section2 h2,
+.section3 h2 {
     font-size: 1.375rem;
   }
 }
 @media screen and (max-width: 375px) {
-  .section2 h2 {
+  .section1 h2,
+.section2 h2,
+.section3 h2 {
     font-size: 1.25rem;
   }
 }
 
-.section1 p, .section2 p {
+.section1 p,
+.section2 p,
+.section3 p {
   font-size: 1.125rem;
 }
 @media screen and (max-width: 425px) {
-  .section1 p, .section2 p {
+  .section1 p,
+.section2 p,
+.section3 p {
     font-size: 1rem;
   }
 }
 
-.header {
+.header, .lien {
   font-family: "open sans", sans-serif;
 }
 
-.section1 h1 {
+.section1 h1,
+.section2 h1,
+.section3 h1 {
+  font-family: "open sans", sans-serif;
+  color: #fbffff;
+}
+.section1 h2,
+.section2 h2,
+.section3 h2 {
   font-family: "open sans", sans-serif;
 }
-.section1 p {
-  line-height: 1.5625rem;
-  font-family: "open sans", sans-serif;
-}
-
-.section2 h2 {
-  font-family: "open sans", sans-serif;
-}
-.section2 p {
+.section1 p,
+.section2 p,
+.section3 p {
   line-height: 1.5625rem;
   font-family: "open sans", sans-serif;
   color: #e3e6ee;
+}
+
+@media screen and (max-width: 425px) {
+  .section3 h1 {
+    font-size: 1.25rem;
+  }
+}
+@media screen and (max-width: 375px) {
+  .section3 p {
+    font-size: 0.9375rem;
+  }
 }
 
 .header__links {
@@ -95,6 +124,7 @@ body {
 .header__links a {
   margin-right: 3.75rem;
   color: white;
+  transition: color 300ms ease-in-out;
   position: relative;
 }
 @media screen and (max-width: 600px) {
@@ -115,10 +145,13 @@ body {
   display: block;
   height: 2px;
   width: 100%;
-  background-color: white;
+  background-color: #65e2d9;
   transform: scale(0);
   transform-origin: left;
   transition: transform 300ms ease-in-out;
+}
+.header__links a:hover {
+  color: #65e2d9;
 }
 .header__links a:hover::after {
   transform: scale(1);
@@ -235,7 +268,6 @@ body {
 }
 .section1__text {
   width: 80%;
-  color: #fbffff;
 }
 .section1__text h1 {
   width: 65%;
@@ -348,12 +380,96 @@ body {
 }
 @media screen and (max-width: 768px) {
   .section2 .line1 {
+    padding-top: 6.25rem;
+  }
+}
+
+.section3 {
+  background-color: #181F2B;
+  padding-top: 6.25rem;
+  margin-bottom: 3.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+@media screen and (max-width: 768px) {
+  .section3 {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding-top: 6.25rem;
   }
+}
+.section3__img {
+  text-align: center;
+  margin-left: 1.25rem;
+}
+.section3__img > img {
+  width: 90%;
+}
+@media screen and (max-width: 768px) {
+  .section3__img > img {
+    width: 90%;
+    margin-top: 0rem;
+  }
+}
+.section3__text {
+  width: 50%;
+}
+@media screen and (max-width: 768px) {
+  .section3__text {
+    width: 90%;
+    margin-left: 0.9375rem;
+  }
+}
+.section3__text h1 {
+  width: 68%;
+  margin-bottom: 1.875rem;
+}
+@media screen and (max-width: 1040px) {
+  .section3__text h1 {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .section3__text h1 {
+    width: 100%;
+    margin: 1.875rem 0;
+  }
+}
+.section3__text p {
+  width: 90%;
+  margin: 1.25rem 0;
+}
+@media screen and (max-width: 768px) {
+  .section3__text p {
+    width: 100%;
+  }
+}
+.section3__text .lien a {
+  position: relative;
+  color: white;
+  transition: color 300ms ease-in-out;
+}
+.section3__text .lien a::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: #65e2d9;
+  transform: scale(1);
+  transform-origin: left;
+  transition: transform 300ms ease-in-out;
+}
+.section3__text .lien a:hover {
+  color: #65e2d9;
+}
+.section3__text .lien a:hover::after {
+  transform: scale(0);
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,27 +1,23 @@
 @use "../utils/mixins" as m;
 @use "../utils/functions" as f;
 @use "../utils/variables" as v;
+@use "../page/breakpoints" as b;
 @use "../utils/placeholders";
 
-.header {
+.header, .lien {
   @extend %size-text;
   font-family: v.$font;
 }
 
-.section1 {
+.section1,
+.section2,
+.section3 {
   h1 {
     font-family: v.$font;
     @extend %size-text-h1;
+    color: v.$title-color;
   }
 
-  p {
-    @extend %size-text-p;
-    line-height: f.rem(25);
-    font-family: v.$font;
-  }
-}
-
-.section2 {
   h2 {
     font-family: v.$font;
     @extend %size-text-h2;
@@ -33,4 +29,20 @@
     font-family: v.$font;
     color: v.$p-color;
   }
+}
+
+.section3 {
+  h1 {
+    @include b.ml {
+      font-size: f.rem(20);
+    }
+  }
+
+  p {
+    @include b.mm {
+      font-size: f.rem(15);
+    }
+  }
+
+
 }
