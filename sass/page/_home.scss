@@ -323,27 +323,4 @@
       width: 100%;
     }
   }
-
-  .form {
-    @include b.md {
-      width: 90%;
-      margin: 0 auto;
-    }
-
-    input {
-      width: 40%;
-      border-radius: f.rem(30);
-      padding: f.rem(11) f.rem(15);
-      margin-right: f.rem(30);
-      outline: none;
-      border: none;
-      @include b.md {
-        width: 75%;
-        margin: 0 auto f.rem(20);
-      }
-      @include b.ml {
-        width: 100%;
-      }
-    }
-  }
 }

@@ -1,0 +1,76 @@
+@use "../utils/functions" as f;
+@use "../utils/variables" as v;
+@use "../page/breakpoints" as b;
+
+.form {
+  @include b.md {
+    width: 90%;
+    margin: 0 auto;
+  }
+  @include b.xl {
+    width: 100%;
+  }
+
+  input {
+    width: 40%;
+    border-radius: f.rem(30);
+    padding: f.rem(11) f.rem(15);
+    margin-right: f.rem(30);
+    background-color: rgb(235, 232, 232);
+    outline: none;
+    border: none;
+    transition: v.$transition;
+
+    @include b.breakpoints(1100px) {
+      width: 55%;
+      margin-right: f.rem(20);
+    }
+    @include b.breakpoints(870px) {
+      width: 75%;
+      margin: 0 auto f.rem(20);
+    }
+    @include b.breakpoints(600px) {
+      width: 95%;
+    }
+    @include b.ml {
+      width: 100%;
+    }
+
+    &:hover,
+    &:focus,
+    &:valid {
+      box-shadow: 0 0 20px rgb(0, 0, 0);
+      border: 2px solid v.$accent-color;
+    }
+
+    &:not(:focus):invalid,
+    &:not(:hover):invalid {
+      border: 2px solid rgb(255, 66, 66);
+      animation: shake-horizontal 200ms cubic-bezier(0.4, 0.1, 0.6, 0.9) 2;
+    }
+  }
+}
+
+@keyframes shake-horizontal {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70% {
+    transform: translateX(-10px);
+  }
+  20%,
+  40%,
+  60% {
+    transform: translateX(10px);
+  }
+  80% {
+    transform: translateX(8px);
+  }
+  90% {
+    transform: translateX(-8px);
+  }
+}

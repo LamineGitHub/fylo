@@ -10,7 +10,7 @@
   // border: 1px solid darkred;
   @include m.flex(space-between);
   width: 92%;
-  margin: f.rem(45) auto;
+  margin: f.rem(40) auto;
   @include b.ml {
     @include m.flex($direction: column);
     margin: f.rem(25) auto;
