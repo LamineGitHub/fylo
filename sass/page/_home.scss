@@ -197,7 +197,7 @@
     a {
       position: relative;
       color: white;
-      transition: color v.$transition;
+      transition: color v.$transition 0.1s;
 
       &::after {
         content: "";
@@ -288,14 +288,15 @@
 .section5 {
   background-color: v.$main-color;
   position: relative;
-  padding-top: f.rem(220);
+  padding-top: f.rem(150);
   @include b.md {
-    padding-top: f.rem(150);
+    padding-top: f.rem(130);
   }
 
   .container {
     background-color: v.$secondary-color;
     width: 70%;
+    transform: translateY(f.rem(100));
     margin: 0 auto;
     padding-bottom: f.rem(40);
     text-align: center;

@@ -1,0 +1,108 @@
+@use "../utils/mixins" as m;
+@use "../utils/functions" as f;
+@use "../utils/variables" as v;
+@use "../page/breakpoints" as b;
+
+.footer {
+  background-color: v.$bg-footer;
+  padding: f.rem(230) 0 f.rem(30);
+
+  .container {
+    width: 85%;
+    margin: 0 auto;
+    @include m.flex(space-between);
+    @include b.breakpoints(870px) {
+      @include m.flex($direction: column);
+    }
+  }
+
+  .logo {
+    width: 40%;
+    @include b.breakpoints(870px) {
+      width: 90%;
+      text-align: center;
+      margin-bottom: f.rem(30);
+    }
+
+    &__img {
+      margin-bottom: f.rem(25);
+      @include b.breakpoints(870px) {
+        width: 70%;
+        margin: 0 auto;
+        margin-bottom: f.rem(30);
+      }
+      @include b.ms {
+        margin-bottom: f.rem(25);
+      }
+    }
+
+  }
+
+  &__contact {
+    margin-top: f.rem(80);
+    @include b.xl {
+      margin-top: f.rem(60);
+    }
+    @include b.breakpoints(870px) {
+      margin-top: f.rem(10);
+    }
+
+    li {
+      margin-bottom: f.rem(10);
+    }
+
+    img {
+      margin-right: f.rem(10);
+    }
+  }
+
+  &__links {
+    width: 23%;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    margin-top: f.rem(130);
+    @include b.xl {
+      margin-top: f.rem(115);
+    }
+    @include b.breakpoints(870px) {
+      width: 50%;
+      margin-top: f.rem(30);
+    }
+    @include b.ml {
+      width: 70%;
+    }
+
+    li {
+      margin-bottom: f.rem(10);
+    }
+
+    a {
+      color: white;
+      font-family: v.$font;
+      position: relative;
+      transition: color v.$transition 0.1s;
+      letter-spacing: f.rem(1);
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        display: block;
+        height: 2px;
+        width: 100%;
+        background-color: v.$accent-secondary-color;
+        transform: scale(1);
+        transform-origin: left;
+        transition: transform v.$transition;
+      }
+      &:hover {
+        color: v.$accent-secondary-color;
+        &::after {
+          transform: scale(0);
+        }
+      }
+    }
+  }
+}
