@@ -228,6 +228,7 @@ input {
 @media screen and (max-width: 768px) {
   .header .humburgers {
     display: block;
+    cursor: pointer;
   }
 }
 .header .humburgers .line {

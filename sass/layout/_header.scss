@@ -36,6 +36,7 @@
     display: none;
     @include b.md {
       display: block;
+      cursor: pointer;
     }
 
     .line {
