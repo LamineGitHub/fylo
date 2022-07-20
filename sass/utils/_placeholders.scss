@@ -33,10 +33,10 @@
 %size-text-h3 {
   font-size: f.rem(19);
   @include b.ml {
-    font-size: f.rem(16);
+    font-size: f.rem(16.5);
   }
   @include b.mm {
-    font-size: f.rem(15);
+    font-size: f.rem(16);
   }
 }
 
@@ -46,6 +46,6 @@
     font-size: f.rem(16);
   }
   @include b.mm {
-    font-size: f.rem(14);
+    font-size: f.rem(14.5);
   }
 }

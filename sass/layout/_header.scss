@@ -11,9 +11,13 @@
   @include m.flex(space-between);
   width: 92%;
   margin: f.rem(40) auto;
+  @include b.md {
+    width: 100%;
+    margin: f.rem(25) auto f.rem(80);
+  }
   @include b.ml {
-    @include m.flex($direction: column);
-    margin: f.rem(25) auto;
+    margin: f.rem(25) auto f.rem(70);
+
   }
 
   img {
@@ -23,6 +27,44 @@
     @include b.ml {
       width: 60%;
       margin-left: 0;
+    }
+  }
+
+  .humburgers {
+    margin-right: f.rem(50);
+    margin-bottom: f.rem(10);
+    display: none;
+    @include b.md {
+      display: block;
+    }
+
+    .line {
+      position: absolute;
+      z-index: 100;
+      display: block;
+      width: 35px;
+      height: 3px;
+      border-radius: 10px;
+      background: #f1f1f1;
+      transition: transform 0.3s ease-in-out, opacity 0.1s ease-in-out;
+    }
+
+    .l1 {
+      transform: translateY(-10px);
+    }
+    .l3 {
+      transform: translateY(10px);
+    }
+    &.open {
+      .l1 {
+        transform: translateY(0px) rotate(135deg);
+      }
+      .l2 {
+        opacity: 0;
+      }
+      .l3 {
+        transform: translateY(0px) rotate(-135deg);
+      }
     }
   }
 }

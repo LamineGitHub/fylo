@@ -6,20 +6,37 @@
 .header {
   &__links {
     text-align: center;
-    @include b.ml {
-      @include m.flex(space-between);
-      margin: f.rem(15) 0 0 0;
+    @include b.md {
+      @include m.flex($direction: column);
+      padding: f.rem(50) 0 0 0;
+      width: 100%;
+      min-width: 40vh;
+      position: absolute;
+      background-color: #124575;
+      border-bottom: 1px solid v.$accent-secondary-color;
+      transform: translateX(100%);
+      transition: transform 0.3s cubic-bezier(0.73, 0.11, 0.67, 0.84);
+      z-index: 99;
+      &.open {
+        transform: translate(0);
+      }
     }
     a {
+      margin-bottom: f.rem(15);
+
+      font-weight: 600;
       margin-right: f.rem(60);
       color: white;
       transition: color v.$transition;
       position: relative;
-      @include b.breakpoints(600px) {
+      letter-spacing: f.rem(1);
+      @include b.breakpoints(780px) {
+        letter-spacing: normal;
         margin-right: f.rem(20);
       }
-      @include b.ml {
-        margin: 0 f.rem(15) 0 f.rem(15);
+      @include b.breakpoints(460px) {
+        margin-right: f.rem(15);
+        letter-spacing: f.rem(1);
       }
       &::after {
         content: "";
