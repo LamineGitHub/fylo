@@ -41,6 +41,10 @@
   position: relative;
   @include m.flex($direction: column);
   text-align: center;
+  margin-top: f.rem(50);
+  @include b.md {
+    margin-top: f.rem(130);
+  }
 
   &__img {
     > img {
