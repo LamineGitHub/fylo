@@ -31,12 +31,12 @@
   }
 
   .humburgers {
+    cursor: pointer;
     margin-right: f.rem(50);
     margin-bottom: f.rem(10);
     display: none;
     @include b.md {
       display: block;
-      cursor: pointer;
     }
 
     .line {
@@ -51,10 +51,10 @@
     }
 
     .l1 {
-      transform: translateY(-10px);
+      transform: translateY(-8px);
     }
     .l3 {
-      transform: translateY(10px);
+      transform: translateY(8px);
     }
     &.open {
       .l1 {

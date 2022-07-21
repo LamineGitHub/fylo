@@ -1,6 +1,5 @@
 @use "../utils/variables" as v;
 
-
 *,
 *::after,
 *::before {
@@ -13,5 +12,10 @@
 }
 
 body {
-    background-color: v.$secondary-color;
+  background-color: v.$secondary-color;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }

@@ -13,6 +13,11 @@ body {
   background-color: #1c2230;
 }
 
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
 .header,
 .lien {
   font-size: 1.0625rem;
@@ -134,7 +139,7 @@ input {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 3.125rem 0 0 0;
+    padding: 6.25rem 0 0 0;
     width: 100%;
     min-width: 40vh;
     position: absolute;
@@ -149,7 +154,8 @@ input {
   }
 }
 .header__links a {
-  margin-bottom: 0.9375rem;
+  margin-top: 0.625rem;
+  margin-bottom: 1.25rem;
   font-weight: 600;
   margin-right: 3.75rem;
   color: white;
@@ -221,6 +227,7 @@ input {
   }
 }
 .header .humburgers {
+  cursor: pointer;
   margin-right: 3.125rem;
   margin-bottom: 0.625rem;
   display: none;
@@ -228,7 +235,6 @@ input {
 @media screen and (max-width: 768px) {
   .header .humburgers {
     display: block;
-    cursor: pointer;
   }
 }
 .header .humburgers .line {
@@ -242,10 +248,10 @@ input {
   transition: transform 0.3s ease-in-out, opacity 0.1s ease-in-out;
 }
 .header .humburgers .l1 {
-  transform: translateY(-10px);
+  transform: translateY(-8px);
 }
 .header .humburgers .l3 {
-  transform: translateY(10px);
+  transform: translateY(8px);
 }
 .header .humburgers.open .l1 {
   transform: translateY(0px) rotate(135deg);
@@ -513,6 +519,12 @@ input {
   align-items: center;
   flex-direction: column;
   text-align: center;
+  margin-top: 3.125rem;
+}
+@media screen and (max-width: 768px) {
+  .section1 {
+    margin-top: 8.125rem;
+  }
 }
 .section1__img > img {
   width: 75%;

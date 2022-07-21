@@ -8,7 +8,7 @@
     text-align: center;
     @include b.md {
       @include m.flex($direction: column);
-      padding: f.rem(50) 0 0 0;
+      padding: f.rem(100) 0 0 0;
       width: 100%;
       min-width: 40vh;
       position: absolute;
@@ -22,8 +22,8 @@
       }
     }
     a {
-      margin-bottom: f.rem(15);
-
+      margin-top: f.rem(10);
+      margin-bottom: f.rem(20);
       font-weight: 600;
       margin-right: f.rem(60);
       color: white;
