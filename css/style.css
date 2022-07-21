@@ -9,6 +9,11 @@
   outline: none;
 }
 
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
 body {
   background-color: #1c2230;
 }
